@@ -1240,7 +1240,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f6d6ff;
+  background: #44ffbf;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1559,9 +1559,6 @@ pre .javascript .function {
   margin: 8px -10px -20px;
   opacity: 0;
 }
-.back-to-top span {
-  display: none;
-}
 .back-to-top.back-to-top-on {
   cursor: pointer;
   opacity: 1;
@@ -1570,9 +1567,9 @@ pre .javascript .function {
   opacity: 0.8;
 }
 .reading-progress-bar {
-  background: #67c6c0;
+  background: #37c6c0;
   display: block;
-  height: 6px;
+  height: 5px;
   left: 0;
   position: fixed;
   width: 0;
