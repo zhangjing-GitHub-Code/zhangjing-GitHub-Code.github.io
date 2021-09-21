@@ -1286,7 +1286,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffc1a1;
+  background: #2a7a1f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2632,7 +2632,7 @@ body {
 			opacity: 0.9;
 }*/
 .posts-expand .post-title-link {
-  color: #222;
+  color: #226;
 }
 /*.post-block {
 	    //background: var(--content-bg-color);
