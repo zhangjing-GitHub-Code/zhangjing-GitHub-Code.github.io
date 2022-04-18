@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>pubg newstate 安装教程</title>
+      <link href="/2021/11/12/pubg-newstate-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+      <url>/2021/11/12/pubg-newstate-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是安装pubg newstate并游玩的教程。</p><h1 id="Step1-处理谷歌依赖"><a href="#Step1-处理谷歌依赖" class="headerlink" title="Step1 处理谷歌依赖"></a>Step1 处理谷歌依赖</h1><h2 id="安装谷歌套件"><a href="#安装谷歌套件" class="headerlink" title="安装谷歌套件"></a>安装谷歌套件</h2><p>搜索<code>Go 谷歌安装器</code>，安装后运行，按照提示安装Google套件</p><h2 id="注册谷歌账号"><a href="#注册谷歌账号" class="headerlink" title="注册谷歌账号"></a>注册谷歌账号</h2><p>这里需要VP N来连接谷歌(<del>GFW真睿智</del>)这里<del>推荐</del>提几个<a href="#toc-heading-6">V pn</a>((先用个V pN凑乎着，连上谷歌play都是VPN)，<br>假设你连上了V pn</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 谷歌 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>咕咕鸡API搭建教程</title>
+      <link href="/2021/11/08/%E5%92%95%E5%92%95%E9%B8%A1API%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+      <url>/2021/11/08/%E5%92%95%E5%92%95%E9%B8%A1API%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>就之前我（小学）班主任给了我一个热敏打印机，名曰咕咕鸡（Memobird） G1 （<del>有亿点老</del>），因为我喜欢研究这些东西，我就写了个API的调用（不咋地（doge））。</p><span id="more"></span><h1 id="申请API"><a href="#申请API" class="headerlink" title="申请API"></a>申请API</h1><h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>首先当然是注册开发帐号了（<del>不然人家都不给你用</del>），进入<a href="http://open.memobird.cn/">咕咕鸡 Memobird 开放平台</a>，点击右上角注册：</p><p><img src="/images/memobirdopen.home01.png" alt="Memobird 开放平台主页"></p><p>输入你将要注册的邮箱和密码，填一下右边的验证码，点注册。</p><p><img src="/images/memobirdopen.reg01.png" alt="Memobird 开放平台主页"></p><h2 id="登录并申请API"><a href="#登录并申请API" class="headerlink" title="登录并申请API"></a>登录并申请API</h2><p>会提示到注册的电子邮箱去激活，激活后用注册的电子邮箱和密码<a href="http://open.memobird.cn/user/index">登录</a>，依旧有一个验证码。</p><p>登录进去后好像会有一个填写API信息（我的账号是一两年前申请的，有点不清楚……（捂脸）），按需求填写，申请后（可能有较短的审核期）到<a href="http://open.memobird.cn/User/Main">用户主页</a>，查看<code>Access_Key</code>，待会要用（<strong><em>注意，这个Ak很重要，相当于是你申请的API的使用密码，不能泄露</em></strong>)。</p><p>这里还要先绑定用户，网络地址：<a href="http://open.memobird.cn/home/setuserbind">http://open.memobird.cn/home/setuserbind</a></p><p>这里有4个参数（就是网址后面加个<code>?</code>，后面再跟的东西是参数），分别为：</p><ol><li>ak ：就是刚刚的Access_key，填在这里</li><li>timestamp ：当前时间，格式<code>YYYY-MM-DD hh:mm:ss</code>，示例<code>2021-11-14 16:32:25</code></li><li>memobirdID ：咕咕鸡设备编号（双击设备上的按键可以打印出来），例如<code>fb93bfff504c020a</code>（一般没什么格式，不要瞎试）</li><li>useridentifying ：与用户关联的唯一标识符，可以自定义（一般用数字），示例<code>123336</code>。</li></ol><p>返回值是json格式，<code>showapi_res_code</code>是状态码，<code>1</code>为成功，其他失败（检查ak是否正确以及地址是否正确）。</p><p><code>useridentifying</code>以后也都要用到</p><h2 id="熟悉API"><a href="#熟悉API" class="headerlink" title="熟悉API"></a>熟悉API</h2><p>这里推荐一下<a href="http://open.memobird.cn/upload/webapi.pdf">官方文档（适用于Wifi的咕咕鸡）</a>。<del>看过就熟悉了，所以我不讲了</del> 讲还是要讲的，这里的<code>wifi API</code>是基于web访问的。这些参数里有一些基本都要用到，如下：</p><div class="table-container"><table><thead><tr><th>名称</th><th>示例</th><th>描述</th></tr></thead><tbody><tr><td>ak</td><td>698d51a19d8121ce5818</td><td><code>Access_key</code>，应用签名</td></tr><tr><td>timestamp</td><td>2021-10-22 15:22:31</td><td>客户端当前时间（格式之前说过）</td></tr><tr><td>memobirdID</td><td>fb93bfff504c023c</td><td>咕咕鸡设备编号</td></tr><tr><td>userID</td><td>123336</td><td>之前绑定的标识符</td></tr></tbody></table></div>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录我的github token</title>
+      <link href="/2021/10/17/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84github-token/"/>
+      <url>/2021/10/17/%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84github-token/</url>
+      
+        <content type="html"><![CDATA[<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>我要《感谢》Github，这**要我用authtoken来登录，在这里记录yee下我的token<br><span id="more"></span></p><h1 id="personal-token-here-↓"><a href="#personal-token-here-↓" class="headerlink" title="personal token here:↓"></a>personal token here:↓</h1><h3 id="For-safety-problems-the-token-will-not-be-shown"><a href="#For-safety-problems-the-token-will-not-be-shown" class="headerlink" title="For safety problems, the token will not be shown."></a>For safety problems, the token will not be shown.</h3><pre class="line-numbers language-none"><code class="language-none">name : FuckAtGitHub_IWillMakeMyTokenPublictoken : permission : full control (selected all)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>人教版数学六上1单元复习资料</title>
+      <link href="/2021/09/29/%E4%BA%BA%E6%95%99%E7%89%88%E6%95%B0%E5%AD%A6%E5%85%AD%E4%B8%8A1%E5%8D%95%E5%85%83%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+      <url>/2021/09/29/%E4%BA%BA%E6%95%99%E7%89%88%E6%95%B0%E5%AD%A6%E5%85%AD%E4%B8%8A1%E5%8D%95%E5%85%83%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、计算"><a href="#一、计算" class="headerlink" title="一、计算"></a>一、计算</h1><h2 id="1、分数乘整数"><a href="#1、分数乘整数" class="headerlink" title="1、分数乘整数:"></a>1、分数乘整数:</h2><script type="math/tex; mode=display">\require{enclose} \cfrac{2}{3}\times6 \begin{Bmatrix}求六个\cfrac{2}{3}是多少? \\\cfrac{2}{3}\times6 = \cfrac{2}{\enclose{downdiagonalstrike}{3}\to1}\times\enclose{downdiagonalstrike}{6}\to2 = 4\end{Bmatrix}</script><h2 id="2-分数乘分数"><a href="#2-分数乘分数" class="headerlink" title="2.分数乘分数:"></a>2.分数乘分数:</h2><script type="math/tex; mode=display">\require{enclose} \cfrac{2}{3}\times\cfrac{3}{4} \begin{Bmatrix}求\cfrac{2}{3}的\cfrac{3}{4}是多少 \\\cfrac{2}{3}\times\cfrac{3}{4} = \cfrac{\enclose{downdiagonalstrike}{2}\to1}{\enclose{downdiagonalstrike}{3}\to1}\times\cfrac{\enclose{downdiagonalstrike}{3}\to1}{\enclose{downdiagonalstrike}{4}\to2} = 4\end{Bmatrix}</script><script type="math/tex; mode=display">\begin{align*}\cfrac{b}{a}\times\cfrac{d}{c} & = (b\div a)\times(d\div c) \\ & = b\div a\times d\div c \\ & = b\times d\div a\div c\\ & = (b\times d)\div (a\times c) \\ & = \cfrac{bd}{ac}\end{align*}</script><h2 id="3-注意"><a href="#3-注意" class="headerlink" title="3.注意"></a>3.注意</h2><ul><li>先约再算</li><li>整数$a\to\cfrac{a}{1}$(整数要跟分母约)</li><li>不能约原式</li><li>带分数$\to$假分数(例:$2\cfrac{2}{3}\to\cfrac{8}{3}$) 再算</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 复习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习资料 </tag>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/09/22/hello-world/"/>
+      <url>/2021/09/22/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br><span id="more"></span></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无用の测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello-Typorld</title>
+      <link href="/2021/09/22/hexxo-world/"/>
+      <url>/2021/09/22/hexxo-world/</url>
+      
+        <content type="html"><![CDATA[<h2 id="What"><a href="#What" class="headerlink" title="What !?"></a>What !?</h2><p>The document was created by Typora.  </p><p><strong><em>HeLlO</em></strong> $KaTeX is GOOOGDdd \cfrac{114}{514}$</p><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//过河卒</span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span><span class="token keyword">typedef</span> <span class="token keyword">int</span> tni<span class="token punctuation">;</span><span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">intl</span> <span class="token expression"><span class="token keyword">long</span> <span class="token keyword">long</span></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  intl RC<span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>bl<span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>R<span class="token punctuation">,</span>C<span class="token punctuation">,</span>hx<span class="token punctuation">,</span>hy<span class="token punctuation">,</span>m<span class="token punctuation">,</span>n<span class="token punctuation">;</span>  <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%ld%ld%ld%ld"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">,</span><span class="token operator">&amp;</span>hx<span class="token punctuation">,</span><span class="token operator">&amp;</span>hy<span class="token punctuation">)</span><span class="token punctuation">;</span>  n<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>  m<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>  RC<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  hx<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>  hy<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  bl<span class="token punctuation">[</span>hx<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span>hy<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">/*for(int i=0;i&lt;=8;i++)bl[fx[i]+hx][fy[i]+hy]=1;*/</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>      <span class="token keyword">if</span> <span class="token punctuation">(</span>bl<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>        <span class="token keyword">continue</span><span class="token punctuation">;</span>      <span class="token punctuation">&#125;</span>      RC<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>RC<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>RC<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span>RC<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>  <span class="token punctuation">&#125;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%ld"</span><span class="token punctuation">,</span>RC<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>山本，我囸你仙人~</p><p>给句痛♂快话，投降不投降？</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录hexo+github pages建站过程</title>
+      <link href="/2021/09/20/%E8%AE%B0%E5%BD%95hexo+github-pages%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B/"/>
+      <url>/2021/09/20/%E8%AE%B0%E5%BD%95hexo+github-pages%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我<del>脑子没抽！</del>搭了一个hexo+GitHub Pages的博客站，想记录下建站过程，“友好”的帮助其他人分享常见错误。<br><span id="more"></span></p><h1 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h1><h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><p>首先，你需要有<code>nodejs</code>，</p><h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><p>linux直接用包管理器安装<code>nodejs</code>或<code>nodejs-lts</code>就彳亍了（alpine的apk<del>脑子抽了</del>为了精简，还要手动<code>apk add npm</code>），检查一下。<br>(不会吧不会吧，你竟然不会用包管理器)<br><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh"># on ubuntu$ apt install nodejs-lts#省略安装过程$ npm -v6.14.15$ node -vv14.17.6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>（这个版本过高可能会造成一些警告（或错误），以后再处理（“程序只要能跑，有warning也不看”(doge)））</p><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>先去<a href="https://nodejs.org/">nodejs官网</a>，选择lts版本（左边那个）<br><img src="/images/nodejswebsite-01.png" alt=""><br>下载的文件应名为<code>node-v14.17.6-x64.msi</code>，运行它，一路点next (前几步有个同意许可协议，把选择框点上就行了，可以选择安装路径)。<br><img src="/images/node-v14.17.6-x64.msi-01.png" alt="node-v14.17.6-x64.msi"><br>安装好后打开<code>cmd</code>，运行<code>npm -v</code>和<code>node -v</code><br><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">C:\Windows\System32&gt;npm -v6.14.10C:\Windows\System32&gt;node -vv14.15.4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>找一个<del>风水宝地</del>你认为合适的地方，比如在<code>~/hexo</code>目录下(linux)，cd到这里。<br><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> ~$ <span class="token function">mkdir</span> hexo$ <span class="token builtin class-name">cd</span> hexo$ <span class="token builtin class-name">pwd</span>~/hexo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>运行<code>npm install hexo</code>，等待安装。<br><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 像这样 ↓</span>$ <span class="token function">npm</span> <span class="token function">install</span> hexo<span class="token comment">#（这两行不必关心，据设备而定）</span><span class="token function">npm</span> WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 <span class="token punctuation">(</span>node_modules<span class="token punctuation">\</span>fsevents<span class="token punctuation">)</span>:<span class="token function">npm</span> WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="token keyword">for</span> fsevents@2.3.2: wanted <span class="token punctuation">&#123;</span><span class="token string">"os"</span><span class="token builtin class-name">:</span><span class="token string">"darwin"</span>,<span class="token string">"arch"</span><span class="token builtin class-name">:</span><span class="token string">"any"</span><span class="token punctuation">&#125;</span> <span class="token punctuation">(</span>current: <span class="token punctuation">&#123;</span><span class="token string">"os"</span><span class="token builtin class-name">:</span><span class="token string">"win32"</span>,<span class="token string">"arch"</span><span class="token builtin class-name">:</span><span class="token string">"x64"</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>+ hexo@5.4.0updated <span class="token number">1</span> package <span class="token keyword">in</span> <span class="token number">8</span>.34s<span class="token number">12</span> packages are looking <span class="token keyword">for</span> funding  run <span class="token variable"><span class="token variable">`</span><span class="token function">npm</span> fund<span class="token variable">`</span></span> <span class="token keyword">for</span> details<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>试着运行<code>hexo -v</code>查看版本<br>运行<code>hexo init</code>，当提示<code>INFO  Start blogging with Hexo!</code>时就代表初始化成功了！<br><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo initINFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.gitfatal: unable to access <span class="token string">'https://github.com/hexojs/hexo-starter.git/'</span><span class="token builtin class-name">:</span> Failed to connect to github.com port <span class="token number">443</span>: Timed out<span class="token comment"># 访问github真是个玄学问题</span>WARN  <span class="token function">git</span> clone failed. Copying data insteadINFO  Install dependenciesadded <span class="token number">242</span> packages from <span class="token number">207</span> contributors <span class="token keyword">in</span> <span class="token number">21</span>.884s<span class="token number">15</span> packages are looking <span class="token keyword">for</span> funding  run <span class="token variable"><span class="token variable">`</span><span class="token function">npm</span> fund<span class="token variable">`</span></span> <span class="token keyword">for</span> detailsINFO  Start blogging with Hexo<span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p><h2 id="试运行"><a href="#试运行" class="headerlink" title="试运行"></a>试运行</h2><p>安装好hexo后，运行<code>hexo g</code>和<code>hexo s</code>，这将生成静态页面并启动内置服务器，用浏览器访问<code>http://localhost:4000</code>以查看效果<br><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo gINFO  Validating configINFO  Start processingINFO  Files loaded <span class="token keyword">in</span> <span class="token number">224</span> ms<span class="token comment">#warning是nodejs版本过高造成的，可以用nvm切换版本或下载较低版本(这***的lts版本的版本都这么高)</span><span class="token punctuation">(</span>node:5356<span class="token punctuation">)</span> Warning: Accessing non-existent property <span class="token string">'lineno'</span> of module exports inside circular dependency<span class="token punctuation">(</span>Use <span class="token variable"><span class="token variable">`</span>node --trace-warnings <span class="token punctuation">..</span>.<span class="token variable">`</span></span> to show where the warning was created<span class="token punctuation">)</span><span class="token punctuation">(</span>node:5356<span class="token punctuation">)</span> Warning: Accessing non-existent property <span class="token string">'column'</span> of module exports inside circular dependency<span class="token punctuation">(</span>node:5356<span class="token punctuation">)</span> Warning: Accessing non-existent property <span class="token string">'filename'</span> of module exports inside circular dependency<span class="token punctuation">(</span>node:5356<span class="token punctuation">)</span> Warning: Accessing non-existent property <span class="token string">'lineno'</span> of module exports inside circular dependency<span class="token punctuation">(</span>node:5356<span class="token punctuation">)</span> Warning: Accessing non-existent property <span class="token string">'column'</span> of module exports inside circular dependency<span class="token punctuation">(</span>node:5356<span class="token punctuation">)</span> Warning: Accessing non-existent property <span class="token string">'filename'</span> of module exports inside circular dependencyINFO  Generated: archives/index.htmlINFO  Generated: archives/2021/index.htmlINFO  Generated: archives/2021/09/index.htmlINFO  Generated: fancybox/blank.gifINFO  Generated: fancybox/fancybox_loading.gifINFO  Generated: fancybox/fancybox_overlay.pngINFO  Generated: index.htmlINFO  Generated: fancybox/fancybox_sprite.pngINFO  Generated: fancybox/fancybox_loading@2x.gifINFO  Generated: fancybox/fancybox_sprite@2x.pngINFO  Generated: js/script.jsINFO  Generated: css/fonts/fontawesome-webfont.eotINFO  Generated: fancybox/jquery.fancybox.cssINFO  Generated: fancybox/helpers/jquery.fancybox-buttons.jsINFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.cssINFO  Generated: fancybox/helpers/jquery.fancybox-media.jsINFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.jsINFO  Generated: fancybox/helpers/jquery.fancybox-buttons.cssINFO  Generated: <span class="token number">2021</span>/09/20/hello-world/index.htmlINFO  Generated: css/fonts/FontAwesome.otfINFO  Generated: css/style.cssINFO  Generated: fancybox/jquery.fancybox.pack.jsINFO  Generated: css/fonts/fontawesome-webfont.ttfINFO  Generated: css/fonts/fontawesome-webfont.woffINFO  Generated: fancybox/jquery.fancybox.jsINFO  Generated: css/images/banner.jpgINFO  Generated: css/fonts/fontawesome-webfont.svgINFO  <span class="token number">28</span> files generated <span class="token keyword">in</span> <span class="token number">774</span> ms$ hexo sINFO  Validating configINFO  Start processingINFO  Hexo is running at http://localhost:4000 <span class="token builtin class-name">.</span> Press Ctrl+C to stop.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>像这样（没做修改默认是这样）：<br><img src="/images/hexo-default-webserver-page.png" alt="默认页面"></p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> json<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello wolrd"</span><span class="token punctuation">)</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><hr><h1 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h1><h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>(如果已有账号可以去<a href="#登录">下一节</a>)进入<a href="https://github.com/">github.com</a>，若加载超时，可尝试科 学上 网或多试试<del><a href="https://github.com.cnpmjs.org">github.com.cnpmjs.org</a> (没试过，应该可以doge)</del>。<br>进去后在左边的框里(<code>Email address</code>)填入你的电子邮箱，点绿色按钮<code>sing up for github</code>，在下个页面根据提示填信息(读不懂英文也可以用翻译吧)，也可以点右上角的sign up，注册后自动登录，去<a href="#创建仓库">创建仓库</a>。</p><h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><p>点右上角sign in(手机:点右上角三横，点右下方sign in)</p><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>电脑点右上角加号旁的小三角，点包含<code>repository</code>的那个，手机先点左上角三横，再点账户名称，选择repositories，再点<code>new</code>。<br>仓库名是<code>github用户名.github.io</code>，如<code>abc.github.io</code>，创建好后，点击settings(手机将code那一栏往左划)，再点pages，如果显示没打开就点source，选择master(一般是这个，选不是none的那个)。<br>仓库创建好后将地址记下(</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 建站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A lloonngg post</title>
+      <link href="/2021/09/19/A-lloonngg-post/"/>
+      <url>/2021/09/19/A-lloonngg-post/</url>
+      
+        <content type="html"><![CDATA[<h1 id="The-title"><a href="#The-title" class="headerlink" title="The title"></a>The title</h1><h2 id="shit-the-2nd-title"><a href="#shit-the-2nd-title" class="headerlink" title="shit the 2nd title"></a>shit the 2nd title</h2><p>木大木大木大木大mudamudamudamudamumduamdummdaudmuadmaudmuad<br>!!!!!!!!!!!!!!!!!!!!!!!!<br>!!!!!!!!!!!!!!!<br><span id="more"></span></p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>!!!!!!!!!!!!!!!!!!!!!!<br>!!!!!!!!!!!!!!!!!!!!!!!!<br>!!!!!!!!!!!!!!!!!!</p><h2 id="ddfsf-amp"><a href="#ddfsf-amp" class="headerlink" title="ddfsf@@#$%^&amp;#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"></a>ddfsf@@#$%^&amp;#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h2><p>sdfdsgfdgsgtrvtrev</p><h2 id="dsfd"><a href="#dsfd" class="headerlink" title="dsfd"></a>dsfd</h2><p>asfdds</p><h3 id="sdfd"><a href="#sdfd" class="headerlink" title="sdfd"></a>sdfd</h3><p>safdskoihgdufhsgf<br>asdsdfsgdfvsdfc<br>1    24325435asd<br>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无用の测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>An article</title>
+      <link href="/2021/09/18/An-article/"/>
+      <url>/2021/09/18/An-article/</url>
+      
+        <content type="html"><![CDATA[<p>这是我的第一个文章（doge）<br>测试亿下。。。。<br><span id="more"></span><br>Hexo yyds</p><h2 id="Github-pages-yyds"><a href="#Github-pages-yyds" class="headerlink" title="Github pages yyds!"></a>Github pages yyds!</h2><p>转载请标注：<a href="https://zhangjing-github-code.github.io/2021/09/18/An-article">https://zhangjing-github-code.github.io/2021/09/18/An-article</a><br>谢屑阅读！^_^</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
