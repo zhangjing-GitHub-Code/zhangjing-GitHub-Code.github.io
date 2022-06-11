@@ -30,6 +30,8 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
 </script>
 
 
+    
+
     <title>pubg newstate 安装教程 | zhangjing&#39;s Hexo Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -46,8 +48,6 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
         <link rel="stylesheet" type="text/css" href="/js/live2d_assets/waifu.css">
     
 <meta name="generator" content="Hexo 5.4.0"></head>
-
-
 
 
 <body>
@@ -516,7 +516,7 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
 
         
         <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
         
 
         
@@ -1013,6 +1013,7 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
         el: '#vcomments',
         appId: 'Jo1swQmfLBjmWbGefA7HCxr0-MdYXbMMI',
         appKey: 'hXuikr3OOMGx2av4DTPIFXyD',
+        serverURLs: 'https://Jo1swQmf.api.lncldglobal.com',
         notify: 'true' === 'true',
         verify: 'false' === 'true',
         visitor: 'true' === 'true',
@@ -1035,6 +1036,8 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
 <!--酷Q推送-->
 
 
+
+    
 
     
 
@@ -1146,8 +1149,14 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
 
 
 
+<!-- Updated upstream -->
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
 
 <!-- 代码语言 -->
 
@@ -1163,6 +1172,25 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+<!-- 代码块功能依赖 >
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+< 代码语言 >
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+< 代码块复制 >
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+< 代码块收缩 >
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+-->
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1185,19 +1213,6 @@ Step1 处理谷歌依赖安装谷歌套件搜索Go 谷歌安装器，安装后�
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
             headingSelector: 'h1, h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
         });
 
         // Set scroll toc fixed.
